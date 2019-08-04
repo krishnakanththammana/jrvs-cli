@@ -1,0 +1,26 @@
+{
+  "name": "jrvs-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jarvis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jrvs": "./jarvis.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishnakanththammana/jrvs-cli.git"
+  },
+  "author": "krish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishnakanththammana/jrvs-cli/issues"
+  },
+  "homepage": "https://github.com/krishnakanththammana/jrvs-cli#readme",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "moment": "^2.24.0"
+  }
+}
