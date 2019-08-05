@@ -30,7 +30,6 @@ program
   .option('-l, --list', 'rename a task')
   .description('add, list or delete task(s)')
   .action((tsk, option) => {
-    console.log(tsk)
     if(option.add) task.addTask(tsk)
     if(option.list) task.listTask()
     if(option.delete) task.deleteTask()
