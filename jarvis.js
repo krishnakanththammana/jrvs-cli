@@ -32,7 +32,7 @@ program
   .action((tsk, option) => {
     if(option.add) task.addTask(tsk)
     if(option.list) task.listTask()
-    if(option.delete) task.deleteTask()
+    if(option.delete) task.deleteTask(tsk)
   })
 
 program.parse(process.argv)

@@ -2,7 +2,6 @@ var fs = require('fs');
 const filePath = "./tasks.json";
 exports.addTask = function (tsk) {
     // add task
-    console.log("add task...", tsk);
     fs.exists(filePath, function (exists) {
         if (!exists) {
             fs.appendFile(filePath, '[]', function (err) {
@@ -18,6 +17,7 @@ exports.addTask = function (tsk) {
             data = JSON.stringify(data);
             fs.writeFile(filePath, data, 'utf8', function (err) {
                if (err) return console.log(err);
+               console.log("added task...");
             });
         });
     });
@@ -34,6 +34,7 @@ exports.deleteTask = function (index) {
         data = JSON.stringify(data);
         fs.writeFile(filePath, data, 'utf8', function (err) {
            if (err) return console.log(err);
+            console.log("deleting task...")
         });
     });
 };
