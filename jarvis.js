@@ -24,6 +24,13 @@ program
   })
 
 program
+  .command('tick [sec]')
+  .description('start timer')
+  .action((sec) => {
+    task.timer(sec);
+  })
+
+program
   .command('task [tsk]')
   .option('-a, --add', 'add a task')
   .option('-d, --delete', 'delete a task')

@@ -10,6 +10,11 @@ $ npm i jrvs-cli -g
 
 # New Features!
 
+ Now, have a timer in terminal/cmd !!
+```sh
+$ jrvs task tick 10
+```
+
  Get date and time in command line
 ```sh
 $ jrvs date

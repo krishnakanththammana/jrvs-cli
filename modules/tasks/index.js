@@ -17,7 +17,7 @@ exports.addTask = function (tsk) {
             data = JSON.stringify(data);
             fs.writeFile(filePath, data, 'utf8', function (err) {
                if (err) return console.log(err);
-               console.log("added task...");
+               console.log("added task...: " + tsk);
             });
         });
     });
@@ -50,6 +50,21 @@ exports.listTask = function () {
     });
 };
 
-function readFile(path) {
+exports.timer = function (sec) {
+    tick(sec)
+}
 
+function tick(seconds) {
+    if(seconds) {
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+        process.stdout.write(seconds.toString());
+        seconds--;
+        setTimeout(() => {
+            tick(seconds);
+        }, 1000);
+    } else {
+        process.stdout.clearLine();
+        console.log("\x1b[32m\x1b[40m", "Huston, we have a lift off !!");
+    }
 }
