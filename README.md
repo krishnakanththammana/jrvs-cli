@@ -1,6 +1,6 @@
 # jrvs-cli
 
-jrvs-cli is a tool to help devs get common info, and add/remove tasks
+jrvs-cli is a tool to help devs get common info, and add/remove/list tasks, setup a timer in terminal/cmd
 
 ### Installation
 
@@ -12,7 +12,7 @@ $ npm i jrvs-cli -g
 
  Now, have a timer in terminal/cmd !!
 ```sh
-$ jrvs task tick 10
+$ jrvs tick 10
 ```
 
  Get date and time in command line
