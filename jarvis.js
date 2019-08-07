@@ -3,6 +3,7 @@
 const pckg = require('./package.json')
 const program = require('commander')
 const moment = require('moment')
+const task = require('./modules/tasks')
 
 program.version(pckg.version)
 
@@ -20,6 +21,32 @@ program
   .action(() => {
     const date = moment().format("dddd, MMMM Do YYYY");
     console.log(date);
+  })
+
+program
+  .command('tick [sec]')
+  .description('start timer')
+  .action((sec) => {
+    task.timer(sec);
+  })
+
+program
+  .command('logtime [type]')
+  .description('start timer')
+  .action((type) => {
+    task.logTime(type);
+  })
+
+program
+  .command('task [tsk]')
+  .option('-a, --add', 'add a task')
+  .option('-d, --delete', 'delete a task')
+  .option('-l, --list', 'rename a task')
+  .description('add, list or delete task(s)')
+  .action((tsk, option) => {
+    if(option.add) task.addTask(tsk)
+    if(option.list) task.listTask()
+    if(option.delete) task.deleteTask(tsk)
   })
 
 program.parse(process.argv)

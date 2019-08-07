@@ -1,6 +1,6 @@
 {
   "name": "jrvs-cli",
-  "version": "1.0.0",
+  "version": "1.0.14",
   "description": "",
   "main": "jarvis.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/krishnakanththammana/jrvs-cli#readme",
   "dependencies": {
     "commander": "^2.20.0",
+    "fs": "0.0.1-security",
     "moment": "^2.24.0"
   }
 }
