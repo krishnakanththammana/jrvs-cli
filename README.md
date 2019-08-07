@@ -10,7 +10,22 @@ $ npm i jrvs-cli -g
 
 # New Features!
 
- Now, have a timer in terminal/cmd !!
+ Now, you can log and check you coding time on session/day basis.
+ More coding time stats coming soon.
+
+ To start/resume logging work time:
+```sh
+$ jrvs logtime start
+```
+ To pause/end logging work time:
+```sh
+$ jrvs logtime stop
+```
+ Output:
+```sh
+You've worked for 0.37 minutes in this session and 9.70 minutes so far today!
+```
+ Have a timer in terminal/cmd !!
 ```sh
 $ jrvs tick 10
 ```

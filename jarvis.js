@@ -31,6 +31,13 @@ program
   })
 
 program
+  .command('logtime [type]')
+  .description('start timer')
+  .action((type) => {
+    task.logTime(type);
+  })
+
+program
   .command('task [tsk]')
   .option('-a, --add', 'add a task')
   .option('-d, --delete', 'delete a task')
