@@ -1,56 +1,40 @@
+
 # jrvs-cli
 
-jrvs-cli is a tool to help devs get common info, and add/remove/list tasks, setup a timer in terminal/cmd
+jrvs-cli is a tool to help devs get common info, and add/remove/list tasks, setup a timer in terminal/cmd, and more...
 
 ### Installation
+`$ npm i jrvs-cli -g`
 
-```sh
-$ npm i jrvs-cli -g
-```
 
 # New Features!
 
- Now, you can log and check you coding time on session/day basis.
- More coding time stats coming soon.
 
- To start/resume logging work time:
-```sh
-$ jrvs logtime start
-```
- To pause/end logging work time:
-```sh
-$ jrvs logtime stop
-```
- Output:
-```sh
-You've worked for 0.37 minutes in this session and 9.70 minutes so far today!
-```
- Have a timer in terminal/cmd !!
-```sh
-$ jrvs tick 10
-```
+### Log and check you coding time on session/day basis.
+More coding time stats coming soon.
 
- Get date and time in command line
-```sh
-$ jrvs date
-$ jrvs time
-```
+To start/resume logging coding time: `$ jrvs logtime start`
+To pause/end logging coding time: `$ jrvs logtime stop`
 
- Add, Remove and list tasks in terminal !
- Add
-```sh
-$ jrvs task --add "my task 1"
-$ jrvs task -a "my task 1"
-```
+Output:
+`You have worked for 0.37 minutes in this session and 9.70 minutes so far today!`
 
- Remove
-```sh
-$ jrvs task --remove 2
-$ jrvs task -r 2
-```
+To view coding time so far: `$ jrvs logtime view`
+Output:
+`You have worked for 0.37 minutes so far in this session and 9.70 minutes so far today!`
 
- List
-```sh
-$ jrvs task --list
-$ jrvs task -l
-```
+### Timer in terminal/CMD
+Have a timer in terminal/cmd: `$ jrvs tick 10`
+
+### View date and time in command line
+Date: `$ jrvs date`
+Time: `$ jrvs time`
+
+### TODO list in your terminal/CMD
+Add, Remove and list tasks in terminal !
+
+Add: `$ jrvs task --add "my task 1"` or `$ jrvs task -a "my task 1"`
+
+Remove: `$ jrvs task --remove 2` or `$ jrvs task -r 2`
+
+List tasks: `$ jrvs task --list` or `$ jrvs task -l`

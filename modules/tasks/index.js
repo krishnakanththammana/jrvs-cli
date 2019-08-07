@@ -99,7 +99,7 @@ exports.logTime = function(type) {
             });
         });
     }
-    if (type === "stop") {
+    if (type === "stop" || type === "view") {
         fs.readFile(timerPath, 'utf8', function (err, data) {
             if (err) {
               return console.log(err);
@@ -108,25 +108,33 @@ exports.logTime = function(type) {
             if(data[data.length - 1].date !== moment().format('LL')) {
                 console.log("\x1b[32m\x1b[40m", "*************************************************");
                 console.log("\x1b[32m\x1b[40m", "Oops.. start date and end date are not the same..");
-                console.log("\x1b[32m\x1b[40m", "we are working on fixing this issue..");
-                console.log("\x1b[32m\x1b[40m", "sorry we cant end this session");
+                console.log("\x1b[32m\x1b[40m", "We are working on fixing this issue..");
+                console.log("\x1b[32m\x1b[40m", "Sorry we cant end this session. Please start a new session");
                 console.log("\x1b[32m\x1b[40m", "*************************************************");
                 return
             }
-            data[data.length - 1].stop = moment().format();
-            const {start, stop} = data[data.length - 1]
-            const localSum = moment(stop).diff(moment(start), 'seconds');
-            data[data.length - 1].localSum = localSum;
-            data = JSON.stringify(data);
-            fs.writeFile(timerPath, data, 'utf8', function (err) {
-                if (err) return console.log(err);
-                let timeToday = 0;
-                JSON.parse(data).filter(item => item.date === moment().format('LL')).forEach(item => timeToday += item.localSum)
-                console.log("\x1b[32m\x1b[40m", `You have worked for ${parseFloat(localSum/60).toFixed(2)} minutes in this session and ${parseFloat(timeToday/60).toFixed(2)} minutes so far today!`);
-            });
+            if(type === "stop") {
+                data[data.length - 1].stop = moment().format();
+                const {start, stop} = data[data.length - 1]
+                const localSum = moment(stop).diff(moment(start), 'seconds');
+                data[data.length - 1].localSum = localSum;
+                data = JSON.stringify(data);
+                fs.writeFile(timerPath, data, 'utf8', function (err) {
+                    if (err) return console.log(err);
+                    let timeToday = 0;
+                    JSON.parse(data).filter(item => item.date === moment().format('LL')).forEach(item => timeToday += item.localSum)
+                    console.log("\x1b[32m\x1b[40m", `You have worked for ${parseFloat(localSum/60).toFixed(2)} minutes in this session and ${parseFloat(timeToday/60).toFixed(2)} minutes so far today!`);
+                });
+            } else if(type === "view") {
+                if(!data[data.length - 1].stop) {
+                    let timeToday = 0;
+                    const localSum = moment(moment().format()).diff(moment(data[data.length - 1].start), 'seconds');
+                    data.filter(item => item.date === moment().format('LL')).forEach(item => timeToday += item.localSum)
+                    console.log("\x1b[32m\x1b[40m", `You have worked for ${parseFloat(localSum/60).toFixed(2)} minutes so far in current session and ${parseFloat(timeToday/60).toFixed(2)} minutes so far today!`);
+                } else {
+                    console.log("\x1b[32m\x1b[40m", `Session hasn't started/resumed yet !`);
+                }
+            }
         });
-    }
-    if (type === "view") {
-
     }
 };
