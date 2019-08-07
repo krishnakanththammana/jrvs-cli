@@ -22,7 +22,7 @@ $ jrvs logtime start
 To pause/end logging coding time:
 ```sh
 $ jrvs logtime stop
-`
+```
 
 Output:
 ```sh
@@ -32,7 +32,7 @@ $ You have worked for 0.37 minutes in this session and 9.70 minutes so far today
 To view logging coding time done so far:
 ```sh
 $ jrvs logtime view
-`
+```
 
 Output:
 ```sh
