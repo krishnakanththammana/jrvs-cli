@@ -27,7 +27,7 @@ $ jrvs logtime stop
 Output: <br />
 <img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_stop.png" width="512">
  <br />
-To view logging coding time done so far:
+To view coding time done so far:
 ```sh
 $ jrvs logtime view
 ```
@@ -35,14 +35,6 @@ $ jrvs logtime view
 Output: <br />
 <img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_view.png" width="512">
  <br />
-To view coding time so far:
-```sh
-$ jrvs logtime view
-```
-Output:
-```sh
-You have worked for 0.37 minutes so far in this session and 9.70 minutes so far today!
-```
 
 ### Timer in terminal/CMD
 Have a timer in terminal/cmd:
