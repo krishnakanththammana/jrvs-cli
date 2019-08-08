@@ -9,6 +9,19 @@
   "bin": {
     "jrvs": "./jarvis.js"
   },
+  "keywords": [
+    "productivity",
+    "time tracker",
+    "todo",
+    "time",
+    "date",
+    "work hours",
+    "tasks",
+    "add tasks",
+    "note",
+    "time tracking",
+    "jarvis"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krishnakanththammana/jrvs-cli.git"
