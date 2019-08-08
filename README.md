@@ -24,17 +24,17 @@ To pause/end logging coding time:
 $ jrvs logtime stop
 ```
 
-Output:
-<img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_stop.png" width="48">
-
+Output: <br />
+<img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_stop.png" width="400">
+ <br />
 To view logging coding time done so far:
 ```sh
 $ jrvs logtime view
 ```
 
-Output:
-<img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_view.png" width="48">
-
+Output: <br />
+<img src="https://raw.githubusercontent.com/krishnakanththammana/jrvs-cli/master/assets/jrvs_logtime_view.png" width="400">
+ <br />
 To view coding time so far:
 ```sh
 $ jrvs logtime view
