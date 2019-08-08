@@ -25,7 +25,7 @@ $ jrvs logtime stop
 ```
 
 Output:
-![Stop](assets/jrvs_logtime_stop.png)
+![Stop](assets/jrvs_logtime_stop.png =250x250)
 
 To view logging coding time done so far:
 ```sh
@@ -33,7 +33,7 @@ $ jrvs logtime view
 ```
 
 Output:
-![View](assets/jrvs_logtime_view.png)
+![View](assets/jrvs_logtime_view.png =250x250)
 
 To view coding time so far:
 ```sh
