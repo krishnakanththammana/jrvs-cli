@@ -25,9 +25,7 @@ $ jrvs logtime stop
 ```
 
 Output:
-```sh
-$ You have worked for 0.37 minutes in this session and 9.70 minutes so far today!
-```
+![assets](jrvs_logtime_stop.png)
 
 To view logging coding time done so far:
 ```sh
@@ -35,9 +33,7 @@ $ jrvs logtime view
 ```
 
 Output:
-```sh
-$ You have worked for 0.37 minutes so far in this session and 9.70 minutes so far today!
-```
+![assets](jrvs_logtime_view.png)
 
 To view coding time so far:
 ```sh

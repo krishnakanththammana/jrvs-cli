@@ -124,13 +124,15 @@ exports.logTime = function(type) {
                     let timeToday = 0;
                     JSON.parse(data).filter(item => item.date === moment().format('LL')).forEach(item => timeToday += item.localSum)
                     console.log("\x1b[32m\x1b[40m", `You have worked for ${parseFloat(localSum/60).toFixed(2)} minutes in this session and ${parseFloat(timeToday/60).toFixed(2)} minutes so far today!`);
+                    console.table({"Session": `${parseFloat(localSum/60).toFixed(2)}`, "Today": `${parseFloat(timeToday/60).toFixed(2)}`})
                 });
             } else if(type === "view") {
                 if(!data[data.length - 1].stop) {
                     let timeToday = 0;
                     const localSum = moment(moment().format()).diff(moment(data[data.length - 1].start), 'seconds');
                     data.filter(item => item.date === moment().format('LL')).forEach(item => timeToday += item.localSum)
-                    console.log("\x1b[32m\x1b[40m", `You have worked for ${parseFloat(localSum/60).toFixed(2)} minutes so far in current session and ${parseFloat(timeToday/60).toFixed(2)} minutes so far today!`);
+                    console.log("\x1b[32m\x1b[40m", `Coding time stats: `);
+                    console.table({"This session": `${parseFloat(localSum/60).toFixed(2)} minutes`, "Today": `${parseFloat(timeToday/60).toFixed(2)} minutes`})
                 } else {
                     console.log("\x1b[32m\x1b[40m", `Session hasn't started/resumed yet !`);
                 }
