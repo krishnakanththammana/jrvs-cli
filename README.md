@@ -13,7 +13,7 @@ $ npm i jrvs-cli -g
 
 
 ### Trigger a Google or Youtube search directly from jrvs !!
-More coding time stats coming soon.<br />
+More options coming soon...<br />
 
 To trigger a google search:
 ```sh
