@@ -33,8 +33,10 @@
   },
   "homepage": "https://github.com/krishnakanththammana/jrvs-cli#readme",
   "dependencies": {
+    "chromedriver": "latest",
     "commander": "^2.20.0",
     "fs": "0.0.1-security",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "selenium-webdriver": "^4.0.0-alpha.4"
   }
 }

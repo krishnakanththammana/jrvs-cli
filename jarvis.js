@@ -4,6 +4,11 @@ const pckg = require('./package.json')
 const program = require('commander')
 const moment = require('moment')
 const task = require('./modules/tasks')
+const selenium = require('selenium-webdriver');
+
+require('chromedriver');
+
+const driver = new selenium.Builder().forBrowser("chrome").build();
 
 program.version(pckg.version)
 
@@ -47,6 +52,17 @@ program
     if(option.add) task.addTask(tsk)
     if(option.list) task.listTask()
     if(option.delete) task.deleteTask(tsk)
+  })
+
+program
+  .command('search [searchString]')
+  .option('-g, --google', 'google it')
+  .option('-y, --youtube', 'youtube it')
+  .description('search the web')
+  .action((searchString, option) => {
+    searchString += option.parent.args.length ? '+' + option.parent.args.join('+') : ""
+    if(option.google) driver.get(`https://www.google.com/search?q=${(escape(searchString))}`);
+    if(option.youtube) driver.get(`https://www.youtube.com/results?search_query=${(escape(searchString))}`);
   })
 
 program.parse(process.argv)

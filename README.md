@@ -12,6 +12,18 @@ $ npm i jrvs-cli -g
 # New Features!
 
 
+### Trigger a Google or Youtube search directly from jrvs !!
+More coding time stats coming soon.<br />
+
+To trigger a google search:
+```sh
+$ jrvs search -g iron man / jrvs search --google iron man
+```
+To trigger a youtube search:
+```sh
+$ jrvs search -y iron man / jrvs search --youtube iron man
+```
+
 ### Log and check you coding time on session/day basis.
 More coding time stats coming soon.<br />
 
