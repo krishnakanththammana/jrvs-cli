@@ -5,10 +5,10 @@ const program = require('commander')
 const moment = require('moment')
 const task = require('./modules/tasks')
 const selenium = require('selenium-webdriver');
+const path = require('path')
 
 require('chromedriver');
 
-const driver = new selenium.Builder().forBrowser("chrome").build();
 
 program.version(pckg.version)
 
@@ -18,6 +18,7 @@ program
   .action(() => {
     const time = moment().format("h:mm:ss a")
     console.log(time);
+    console.log("__dirname: ", __dirname);
   })
 
 program
@@ -60,6 +61,7 @@ program
   .option('-y, --youtube', 'youtube it')
   .description('search the web')
   .action((searchString, option) => {
+    const driver = new selenium.Builder().forBrowser("chrome").build();
     searchString += option.parent.args.length ? '+' + option.parent.args.join('+') : ""
     if(option.google) driver.get(`https://www.google.com/search?q=${(escape(searchString))}`);
     if(option.youtube) driver.get(`https://www.youtube.com/results?search_query=${(escape(searchString))}`);
