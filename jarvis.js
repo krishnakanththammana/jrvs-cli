@@ -5,7 +5,6 @@ const program = require('commander')
 const moment = require('moment')
 const task = require('./modules/tasks')
 const selenium = require('selenium-webdriver');
-const path = require('path')
 
 require('chromedriver');
 
@@ -18,7 +17,6 @@ program
   .action(() => {
     const time = moment().format("h:mm:ss a")
     console.log(time);
-    console.log("__dirname: ", __dirname);
   })
 
 program
