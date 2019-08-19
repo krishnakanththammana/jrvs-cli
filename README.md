@@ -11,7 +11,7 @@ $ npm i jrvs-cli -g
 <br />
 if you face asny issue due to Chromedriver while installing, please use the following commmand to bypass the error:
 ```sh
-npm i jrvs-cli -g --unsafe-perm=true
+$ npm i jrvs-cli -g --unsafe-perm=true
 ```
 
 
