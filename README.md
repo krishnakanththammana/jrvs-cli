@@ -7,7 +7,7 @@ jrvs-cli is a tool to help devs get common info, and add/remove/list tasks, setu
 ```sh
 $ npm i jrvs-cli -g
 ```
-<br />
+
 If you face asny issue due to Chromedriver while installing, please use the following commmand to bypass the error:
 ```sh
 $ npm i jrvs-cli -g --unsafe-perm=true
