@@ -2,8 +2,8 @@ var fs = require('fs');
 const moment = require('moment')
 const path = require('path')
 
-const filePath = __dirname + "/static/tasks.json";
-const timerPath = __dirname + "/static/timer.json";
+const filePath = __dirname + "/tasks.json";
+const timerPath = __dirname + "/timer.json";
 exports.addTask = function (tsk) {
     // add task
     fs.exists(filePath, function (exists) {
