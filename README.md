@@ -78,11 +78,11 @@ $ jrvs task --add "my task 1"` or `$ jrvs task -a "my task 1"
 
 Remove:
 ```sh
-$ jrvs task --remove 2
+$ jrvs task --delete 2
 ```
 or
 ```sh
-$ jrvs task -r 2
+$ jrvs task -d 2
 ```
 
 List tasks:
