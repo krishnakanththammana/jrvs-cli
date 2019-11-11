@@ -20,7 +20,16 @@
     "add tasks",
     "note",
     "time tracking",
-    "jarvis"
+    "jarvis",
+    "search",
+    "google",
+    "youtube",
+    "google search",
+    "youtube search",
+    "online search from terminal",
+    "alias",
+    "add alias",
+    "shortcuts"
   ],
   "repository": {
     "type": "git",
@@ -33,11 +42,11 @@
   },
   "homepage": "https://github.com/krishnakanththammana/jrvs-cli#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "chromedriver": "latest",
     "commander": "^2.20.0",
     "fs": "0.0.1-security",
     "moment": "^2.24.0",
-    "path": "^0.12.7",
     "selenium-webdriver": "^4.0.0-alpha.4"
   }
 }

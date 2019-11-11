@@ -16,6 +16,22 @@ $ npm i jrvs-cli -g --unsafe-perm=true
 # New Features!
 
 
+### Add terminal/cmd aliases using jrvs !!
+One of the most useful tools for a developer !!<br />
+
+To add an alias:
+```sh
+$ jrvs alias list "ls"
+```
+To run an existing alias:
+```sh
+$ jrvs run list
+```
+To list all existing:
+```sh
+$ jrvs listAliases
+```
+
 ### Trigger a Google or Youtube search directly from jrvs !!
 More options coming soon...<br />
 

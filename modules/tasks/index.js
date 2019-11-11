@@ -1,30 +1,17 @@
 var fs = require('fs');
 const moment = require('moment')
-const path = require('path')
+const commons = require('../commons');
 
 const filePath = __dirname + "/tasks.json";
 const timerPath = __dirname + "/timer.json";
 exports.addTask = function (tsk) {
     // add task
-    fs.exists(filePath, function (exists) {
-        if (!exists) {
-            fs.appendFile(filePath, '[]', function (err) {
-                if (err) throw err;
-            });
-        }
-        fs.readFile(filePath, 'utf8', function (err, data) {
-            if (err) {
-              return console.log(err);
-            }
-            data = JSON.parse(data);
-            data.push(tsk)
-            data = JSON.stringify(data);
-            fs.writeFile(filePath, data, 'utf8', function (err) {
-               if (err) return console.log(err);
-               console.log("added task...: " + tsk);
-            });
-        });
-    });
+    function parseData(fileData) {
+        fileData = JSON.parse(fileData);
+        fileData.push(tsk)
+        return JSON.stringify(fileData);
+    }
+    commons.addDataToFile(filePath, parseData);
 };
 
 exports.deleteTask = function (index) {
@@ -45,13 +32,11 @@ exports.deleteTask = function (index) {
 
 exports.listTask = function () {
     // list task
-    fs.readFile(filePath, 'utf8', function (err, data) {
-        if (err) {
-          return console.log(err);
-        }
+    function callback(data) {
         data = JSON.parse(data);
         data.forEach((item, index) => console.log(`${index}. ${item}`))
-    });
+    }
+    commons.readFile(filePath, callback);
 };
 
 exports.timer = function (sec) {

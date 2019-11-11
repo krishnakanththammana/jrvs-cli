@@ -4,6 +4,7 @@ const pckg = require('./package.json')
 const program = require('commander')
 const moment = require('moment')
 const task = require('./modules/tasks')
+const commands = require('./modules/short-commands')
 const selenium = require('selenium-webdriver');
 
 require('chromedriver');
@@ -45,7 +46,7 @@ program
   .command('task [tsk]')
   .option('-a, --add', 'add a task')
   .option('-d, --delete', 'delete a task')
-  .option('-l, --list', 'rename a task')
+  .option('-l, --list', 'list all tasks')
   .description('add, list or delete task(s)')
   .action((tsk, option) => {
     if(option.add) task.addTask(tsk)
@@ -63,6 +64,27 @@ program
     searchString += option.parent.args.length ? '+' + option.parent.args.join('+') : ""
     if(option.google) driver.get(`https://www.google.com/search?q=${(escape(searchString))}`);
     if(option.youtube) driver.get(`https://www.youtube.com/results?search_query=${(escape(searchString))}`);
+  })
+
+program
+  .command('alias <alias> <command>')
+  .description('add an alias')
+  .action((alias, command) => {
+    commands.addCommand(alias, command)
+  })
+
+program
+  .command('run <cmd>')
+  .description('run an existing alias')
+  .action((cmd) => {
+    commands.runCommand(cmd);
+  })
+
+program
+  .command('listAliases')
+  .description('list all existing alias')
+  .action(() => {
+    commands.listCommands();
   })
 
 program.parse(process.argv)
