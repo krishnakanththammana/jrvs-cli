@@ -29,7 +29,8 @@
     "online search from terminal",
     "alias",
     "add alias",
-    "shortcuts"
+    "shortcuts",
+    "adding aliases"
   ],
   "repository": {
     "type": "git",
