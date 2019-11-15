@@ -1,4 +1,4 @@
-const { spawn } = require('child_process')
+const { exec } = require('child_process')
 const commons = require('../commons');
 
 const filePath = __dirname + "/cmds.json";
@@ -16,7 +16,7 @@ exports.runCommand = function(cmd) {
   function callback(data) {
     data = JSON.parse(data);
     const command = data.filter(item => item.alias === cmd)[0]
-    if(command) spawn(command.originalCMD).stdout.pipe(process.stdout);
+    if(command) exec(command.originalCMD).stdout.pipe(process.stdout);
     else console.log("command not found.. please add the command using `jrvs aliad <alias> <command>");
   }
   commons.readFile(filePath, callback);
