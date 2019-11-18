@@ -21,11 +21,11 @@ One of the most useful tools for a developer !!<br />
 
 To add an alias:
 ```sh
-$ jrvs alias list "ls"
+$ jrvs alias glog "git log"
 ```
 To run an existing alias:
 ```sh
-$ jrvs run list
+$ jrvs run glog
 ```
 To list all existing:
 ```sh
